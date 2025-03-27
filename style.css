@@ -1,0 +1,131 @@
+/* Light and Soft Color Palette Implementation */
+:root {
+    /* Primary Color Scheme */
+    --primary-color: #4A6CF7;       /* Soft Periwinkle Blue */
+    --secondary-color: #6A8DFF;     /* Light Cornflower Blue */
+    --accent-color: #5DD5C3;        /* Seafoam Green */
+    --background-base: #F5F7FA;     /* Pale Gray-Blue */
+    --text-primary: #2C3E50;        /* Deep Slate Gray */
+    --text-secondary: #4A5568;      /* Soft Charcoal Gray */
+    
+    /* Extended Palette */
+    --light-blue: #E6F2FF;
+    --soft-gray: #E9EDF3;
+    --white: #FFFFFF;
+    
+    /* Shadow and Depth */
+    --shadow-light: rgba(64, 79, 104, 0.05);
+    --shadow-medium: rgba(64, 79, 104, 0.1);
+
+    /* Typography */
+    --font-primary: 'Inter', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Soft and Light Global Styles */
+body {
+    font-family: var(--font-primary);
+    background: linear-gradient(135deg, var(--background-base), var(--light-blue));
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Soft Header */
+h1 {
+    color: var(--primary-color);
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 1.5rem 0;
+}
+
+/* Soft Map Styling */
+#map {
+    height: 500px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 2rem auto;
+    border-radius: 15px;
+    box-shadow: 
+        0 15px 30px var(--shadow-light),
+        0 5px 15px var(--shadow-medium);
+    border: 2px solid var(--light-blue);
+    transition: all 0.3s ease;
+}
+
+#map:hover {
+    transform: translateY(-5px);
+    box-shadow: 
+        0 20px 40px var(--shadow-medium),
+        0 8px 20px var(--shadow-light);
+}
+
+/* Soft Input Styling */
+#locationInput {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    margin: 1.5rem auto;
+    padding: 0.875rem 1.25rem;
+    border: 2px solid var(--light-blue);
+    border-radius: 50px;
+    background-color: var(--white);
+    color: var(--text-primary);
+    box-shadow: 
+        0 5px 15px var(--shadow-light);
+    transition: all 0.3s ease;
+}
+
+#locationInput:focus {
+    border-color: var(--accent-color);
+    box-shadow: 
+        0 5px 15px var(--shadow-medium),
+        0 0 0 4px rgba(93, 213, 195, 0.2);
+}
+
+/* Soft Locations List */
+#locationsList li {
+    background-color: var(--white);
+    border: 1px solid var(--light-blue);
+    box-shadow: 
+        0 4px 10px var(--shadow-light);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+#locationsList li:hover {
+    transform: translateY(-5px);
+    box-shadow: 
+        0 8px 20px var(--shadow-medium);
+    border-color: var(--secondary-color);
+}
+
+/* Soft Remove Button */
+.remove-btn {
+    background-color: #FF6B6B;
+    color: var(--white);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.remove-btn:hover {
+    background-color: #FF4757;
+    transform: scale(1.05);
+}
+
+/* Soft Loading Spinner */
+.spinner {
+    border: 4px solid var(--secondary-color);
+    border-top: 4px solid var(--accent-color);
+    animation: spin 1.2s ease infinite;
+}
+
+/* Additional Soft Touches */
+@media (prefers-reduced-motion: no-preference) {
+    * {
+        scroll-behavior: smooth;
+    }
+}
